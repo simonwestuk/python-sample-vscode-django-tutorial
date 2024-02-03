@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.utils import timezone
-from .models import LogMessage
+from hello.models import LogMessage
 import datetime
 
 class LogMessageModelTest(TestCase):
