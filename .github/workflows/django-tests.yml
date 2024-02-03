@@ -1,9 +1,9 @@
-name: Django Tests
+name: Django Test And Deploy
 
 on: [push, pull_request]
 
 jobs:
-  test:
+  test-and-deploy:
 
     runs-on: ubuntu-latest
 
