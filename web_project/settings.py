@@ -30,7 +30,8 @@ DEBUG = True
 # debugging (which are enabled by default when ALLOWED_HOSTS is empty.)
 ALLOWED_HOSTS = [
     'localhost',
-    '127.0.0.1'
+    '127.0.0.1',
+    'django-example-vhac.onrender.com'
     #'vscode-django-tutorial.azurewebsites.net'  # Sample name only!
 ]
 
