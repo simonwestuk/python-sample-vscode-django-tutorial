@@ -30,8 +30,13 @@ ADD . /app
 # Without these permissions you see the errors "unable to open database file" and
 # "attempt to write to a readonly database", respectively, whenever the app attempts to
 # write to the database.
+RUN if [ ! -f /app/db.sqlite3 ]; then touch /app/db.sqlite3; fi && chmod g+w /app/db.sqlite3
+
 RUN chmod g+w /app
 RUN chmod g+w /app/db.sqlite3
+
+# Install build dependencies
+RUN apk add --no-cache build-base libffi-dev
 
 # Make sure dependencies are installed
 RUN python3 -m pip install -r requirements.txt
