@@ -30,7 +30,8 @@ ADD . /app
 # Without these permissions you see the errors "unable to open database file" and
 # "attempt to write to a readonly database", respectively, whenever the app attempts to
 # write to the database.
-RUN if [ ! -f /app/db.sqlite3 ]; then touch /app/db.sqlite3; fi && chmod g+w /app/db.sqlite3
+#RUN if [ ! -f /app/db.sqlite3 ]; then touch /app/db.sqlite3; fi && chmod g+w /app/db.sqlite3
+COPY db.sqlite3 /app/db.sqlite3
 
 RUN chmod g+w /app
 RUN chmod g+w /app/db.sqlite3
