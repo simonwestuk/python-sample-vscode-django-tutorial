@@ -5,6 +5,9 @@ from django.views.generic import ListView
 from hello.forms import LogMessageForm
 from hello.models import LogMessage
 
+from django.views.decorators.http import require_POST
+from django.shortcuts import get_object_or_404
+
 
 class HomeListView(ListView):
     """Renders the home page, with a list of all polls."""
@@ -48,3 +51,10 @@ def log_message(request):
             return render(request, "hello/log_message.html", {"form": form})
     else:
         return render(request, "hello/log_message.html", {"form": form})
+
+@require_POST
+def delete_message(request, message_id):
+    """Deletes a specific log message."""
+    message = get_object_or_404(LogMessage, id=message_id)
+    message.delete()
+    return redirect('home') 

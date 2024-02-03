@@ -15,4 +15,6 @@ urlpatterns = [
     path("about/", views.about, name="about"),
     path("contact/", views.contact, name="contact"),
     path("log/", views.log_message, name="log"),
+    path('delete_message/<int:message_id>/', views.delete_message, name='delete_message'),
 ]
+

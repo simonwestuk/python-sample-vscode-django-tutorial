@@ -131,3 +131,5 @@ STATIC_URL = '/static/'
 # from this location, rather than relying on the app server to serve those files
 # from various locations in the app. Doing so results in better overall performance.
 STATIC_ROOT = BASE_DIR / 'static_collected'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

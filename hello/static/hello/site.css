@@ -1,41 +1,126 @@
-.message {
-    font-weight: 600;
-    color: blue;
+/* Base settings for modern aesthetic */
+:root {
+    --primary-color: #007bff; /* A vibrant, modern blue */
+    --secondary-color: #6c757d; /* A soft, modern grey */
+    --background-color: #f8f9fa; /* A light grey background for slight contrast */
+    --font-base: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    --font-heading: 'Poppins', sans-serif; /* A modern, clean font for headings */
 }
 
+body {
+    background-color: var(--background-color);
+    font-family: var(--font-base);
+    color: var(--secondary-color);
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Enhanced navbar styling */
 .navbar {
-    background-color: lightslategray;
-    font-size: 1em;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: var(--primary-color);
+    font-size: 1rem;
+    font-family: var(--font-base);
     color: white;
-    padding: 8px 5px 8px 5px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.navbar a {
+.navbar a, .navbar-brand {
+    color: white;
     text-decoration: none;
-    color: inherit;
+    transition: color 0.2s ease-in-out;
+}
+
+.navbar a:hover, .navbar-brand:hover {
+    color: #b3d4fc; /* Lighter blue for hover effect */
 }
 
 .navbar-brand {
-    font-size: 1.2em;
+    font-size: 1.5rem;
     font-weight: 600;
+    font-family: var(--font-heading);
 }
 
 .navbar-item {
-    font-variant: small-caps;
-    margin-left: 30px;
+    margin-left: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
 }
 
+/* Body content styling */
 .body-content {
-    padding: 5px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 1rem;
+    font-family: var(--font-base);
 }
 
-input[name=message] {
+/* Form and message list styling */
+input[type="text"], input[type="submit"] {
+    
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 0.25rem;
     width: 80%;
 }
 
-.message_list th,td {
-    text-align: left;
-    padding-right: 15px;
+
+
+.message_list {
+    width: 100%;
+    border-collapse: collapse;
 }
+
+.message_list th, .message_list td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid #dee2e6; /* Light grey border for separation */
+}
+
+/* Enhancing the message styling */
+.message {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Delete Button Styling */
+.btn {
+    border: none;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+/* Delete Button Styling */
+.delete-btn {
+    background-color: #dc3545; /* Bootstrap's red color for danger actions */
+    color: white;
+}
+
+
+.default-btn {
+    background-color: var(--primary-color); /* Bootstrap's red color for danger actions */
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #c82333; /* A slightly darker red for hover effect */
+}
+
+.delete-btn:hover {
+    background-color: #c82333; /* A slightly darker red for hover effect */
+}
+
+/* Additional styles for better alignment and spacing in the table */
+.message_list td {
+    vertical-align: middle;
+}
+
+.action-cell {
+    white-space: nowrap;
+}
+
